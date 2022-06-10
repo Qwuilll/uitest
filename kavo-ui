@@ -1,2 +1,54 @@
 local Library = loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
-local Window = Library.CreateLib("Tutorial", "Ocean")
+local Window = Library.CreateLib("Build A Boat For Treasure  ", "Ocean")
+local time = 3
+function Tween(Time, Position)
+	game:GetService('Workspace').Gravity = 0
+	game:GetService('TweenService'):Create(Player.Character.HumanoidRootPart, TweenInfo.new(Time, Enum.EasingStyle.Linear), {CFrame = Position}):Play() wait(Time)
+	game:GetService('Workspace').Gravity = 196.2
+end
+function Win()
+  workspace.Gravity = 0
+  workspace.XxAeroxX_YT.HumanoidRootPart.CFrame = game:GetService('Workspace').BoatStages.NormalStages.CaveStage1.DarknessPart.CFrame
+  wait(time)
+  workspace.XxAeroxX_YT.HumanoidRootPart.CFrame = game:GetService('Workspace').BoatStages.NormalStages.CaveStage2.DarknessPart.CFrame
+  wait(time)
+  workspace.XxAeroxX_YT.HumanoidRootPart.CFrame = game:GetService('Workspace').BoatStages.NormalStages.CaveStage3.DarknessPart.CFrame
+  wait(time)
+  workspace.XxAeroxX_YT.HumanoidRootPart.CFrame = game:GetService('Workspace').BoatStages.NormalStages.CaveStage4.DarknessPart.CFrame
+  wait(time)
+  workspace.XxAeroxX_YT.HumanoidRootPart.CFrame = game:GetService('Workspace').BoatStages.NormalStages.CaveStage5.DarknessPart.CFrame
+  wait(time)
+  workspace.XxAeroxX_YT.HumanoidRootPart.CFrame = game:GetService('Workspace').BoatStages.NormalStages.CaveStage6.DarknessPart.CFrame
+  wait(time)
+  workspace.XxAeroxX_YT.HumanoidRootPart.CFrame = game:GetService('Workspace').BoatStages.NormalStages.CaveStage7.DarknessPart.CFrame
+  wait(time)
+  workspace.XxAeroxX_YT.HumanoidRootPart.CFrame = game:GetService('Workspace').BoatStages.NormalStages.CaveStage8.DarknessPart.CFrame
+  wait(time)
+  workspace.XxAeroxX_YT.HumanoidRootPart.CFrame = game:GetService('Workspace').BoatStages.NormalStages.CaveStage9.DarknessPart.CFrame
+  wait(time)
+  workspace.XxAeroxX_YT.HumanoidRootPart.CFrame = game:GetService('Workspace').BoatStages.NormalStages.CaveStage10.DarknessPart.CFrame
+  wait(0.3)
+  workspace.Gravity = 196.2
+  workspace.XxAeroxX_YT.HumanoidRootPart.CFrame = CFrame.new(-55, -360, 9491)
+  wait(0.2)
+  Tween(1, CFrame.new(-55, -360, 9504))
+  wait(1)
+  Tween(1, CFrame.new(-55, -360, 9491))
+end
+
+-- Tabs
+
+local Tab1 = Window:NewTab("Farming")
+local Tab1Section = Tab1:NewSection("Auto Farm")
+
+local Tab2 = Window:NewTab("Theme Changer")
+local Tab2Section = Tab2:NewSection("Themes")
+
+-- Buttons
+
+Tab1Section:NewButton("Gold Farm", "Enables Gold Auto Farm", function()
+    local Gold = true
+    if Gold then
+      Win()
+    end 
+end)
