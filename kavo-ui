@@ -49,10 +49,11 @@ function Block()
 	Tween(1, CFrame.new(-55, -360, 9504))
 	wait(1)
 	Tween(1, CFrame.new(-55, -360, 9491))
-end
-if Player:HasAppearanceLoaded() then
+	if Player:HasAppearanceLoaded() then
 		game:GetService('Workspace').ClaimRiverResultsGold:FireServer()
 	end
+end
+
 -- Tabs
 
 local Tab1 = Window:NewTab("Farming")
@@ -66,9 +67,8 @@ local Tab2Section = Tab2:NewSection("Themes")
 Tab1Section:NewButton("Gold Farm", "Enables Gold Auto Farm", function()
     local Gold = true
     if Gold then
-      Win()
-    end 
-    if Player.OtherData.End.Value ~= 'EndReached' then
-      Win()
+      if Player.OtherData.End.Value ~= 'EndReached' then
+        Win()
+      end
     end
 end)
