@@ -7,6 +7,7 @@ function Tween(Time, Position)
 	game:GetService('Workspace').Gravity = 196.2
 end
 function Win()
+  while wait() do
   workspace.Gravity = 0
   workspace.XxAeroxX_YT.HumanoidRootPart.CFrame = game:GetService('Workspace').BoatStages.NormalStages.CaveStage1.DarknessPart.CFrame
   wait(time)
@@ -34,8 +35,11 @@ function Win()
   Tween(1, CFrame.new(-55, -360, 9504))
   wait(1)
   Tween(1, CFrame.new(-55, -360, 9491))
+  wait(20)
+end
 end
 function Block()
+        while wait() do
 	workspace.Gravity = 0
 	workspace.XxAeroxX_YT.HumanoidRootPart.CFrame = game:GetService('Workspace').BoatStages.NormalStages.CaveStage9.DarknessPart.CFrame
 	wait(2)
@@ -46,6 +50,8 @@ function Block()
 	Tween(1, CFrame.new(-55, -360, 9504))
 	wait(1)
 	Tween(1, CFrame.new(-55, -360, 9491))
+wait(20)
+end
 end
 
 -- Tabs
@@ -72,20 +78,4 @@ Tab1Section:NewButton("Gold Block Farm", "Enabled Gold Block Auto Farm", functio
     end
 end)
 
-Player.CharacterAdded:Connect(function()
-	if Gold then
-		if Player:HasAppearanceLoaded() then
-			game:GetService('Workspace').ClaimRiverResultsGold:FireServer()
-		        Win()
-               end
-	end
-end)
-Player.CharacterAdded:Connect(function()
-	if Block then
-		if Player:HasAppearanceLoaded() then
-			game:GetService('Workspace').ClaimRiverResultsGold:FireServer()
-		        Block()
-                end
-	end
-end)
 
