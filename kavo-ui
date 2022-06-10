@@ -61,18 +61,14 @@ local Tab2Section = Tab2:NewSection("Themes")
 Tab1Section:NewButton("Gold Farm", "Enables Gold Auto Farm", function()
     local Gold = true
     if Gold then
-      if Player.OtherData.End.Value ~= 'EndReached' then
-        Win()
-      end
+      Win()
     end
 end)
 
 Tab1Section:NewButton("Gold Block Farm", "Enabled Gold Block Auto Farm", function()
     local Block = true
     if Block then
-      if Player.OtherData.End.Value ~= 'EndReached' then
-        Block()
-      end
+      Block()
     end
 end)
 
