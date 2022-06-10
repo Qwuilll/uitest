@@ -66,7 +66,7 @@ Tab1Section:NewButton("Gold Farm", "Enables Gold Auto Farm", function()
       end
     end
     Player.CharacterAdded:Connect(function()
-	if Gold then
+	if Gold == true then
 		if Player:HasAppearanceLoaded() then
 			game:GetService('Workspace').ClaimRiverResultsGold:FireServer()
 	  end
@@ -82,7 +82,7 @@ Tab1Section:NewButton("Gold Block Farm", "Enabled Gold Block Auto Farm", functio
       end
     end
     Player.CharacterAdded:Connect(function()
-	if Block then
+	if Block == true then
 		if Player:HasAppearanceLoaded() then
 			game:GetService('Workspace').ClaimRiverResultsGold:FireServer()
 		end
