@@ -34,8 +34,25 @@ function Win()
   Tween(1, CFrame.new(-55, -360, 9504))
   wait(1)
   Tween(1, CFrame.new(-55, -360, 9491))
+  if Player:HasAppearanceLoaded() then
+		game:GetService('Workspace').ClaimRiverResultsGold:FireServer()
+  end
 end
-
+function Block()
+	workspace.Gravity = 0
+	workspace.XxAeroxX_YT.HumanoidRootPart.CFrame = game:GetService('Workspace').BoatStages.NormalStages.CaveStage9.DarknessPart.CFrame
+	wait(2)
+	Tween(5, game:GetService('Workspace').BoatStages.NormalStages.CaveStage10.DarknessPart.CFrame)
+	workspace.Gravity = 196.2
+	workspace.XxAeroxX_YT.HumanoidRootPart.CFrame = CFrame.new(-55, -360, 9491)
+	wait(0.2)
+	Tween(1, CFrame.new(-55, -360, 9504))
+	wait(1)
+	Tween(1, CFrame.new(-55, -360, 9491))
+end
+if Player:HasAppearanceLoaded() then
+		game:GetService('Workspace').ClaimRiverResultsGold:FireServer()
+	end
 -- Tabs
 
 local Tab1 = Window:NewTab("Farming")
@@ -51,4 +68,7 @@ Tab1Section:NewButton("Gold Farm", "Enables Gold Auto Farm", function()
     if Gold then
       Win()
     end 
+    if Player.OtherData.End.Value ~= 'EndReached' then
+      Win()
+    end
 end)
