@@ -53,6 +53,9 @@ function Block()
 	Tween(1, CFrame.new(-55, -360, 9504))
 	wait(1)
 	Tween(1, CFrame.new(-55, -360, 9491))
+	if Block == false then
+	break
+	end
 end
 end
 
@@ -72,20 +75,19 @@ Tab1Section:NewButton("Gold Farm", "Enables Gold Auto Farm", function()
       Win()
     end
 end)
-Tab1Section:Button("Gold Farm", "Enables Gold Auto Farm", function()
+Tab1Section:NewButton("Disable Gold Farm", "Disables Gold Auto Farm", function()
     Gold = false
-    if Gold then
-      Win()
-    end
 end)
 
-Tab1Section:NewButton("Gold Block Farm", "Enabled Gold Block Auto Farm", function()
+Tab1Section:NewButton("Gold Block Farm", "Enables Gold Block Auto Farm", function()
     local Block = true
     if Block then
       Block()
     end
 end)
-
+Tab1Section:NewButton("Disable Gold Block Farm", "Disabled Gold Block Auto Farm", function()
+    Block = false
+end)
 --other stuff
 Player.OtherData.End.Changed:Connect(function()
 	if Gold == true then
