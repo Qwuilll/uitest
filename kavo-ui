@@ -36,6 +36,9 @@ function Win()
   Tween(1, CFrame.new(-55, -360, 9504))
   wait(1)
   Tween(1, CFrame.new(-55, -360, 9491))
+  if Gold == false then
+  break
+  end
 end
 end
 function Block()
@@ -65,6 +68,12 @@ local Tab2Section = Tab2:NewSection("Themes")
 
 Tab1Section:NewButton("Gold Farm", "Enables Gold Auto Farm", function()
     local Gold = true
+    if Gold then
+      Win()
+    end
+end)
+Tab1Section:Button("Gold Farm", "Enables Gold Auto Farm", function()
+    Gold = false
     if Gold then
       Win()
     end
