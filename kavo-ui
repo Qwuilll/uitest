@@ -71,6 +71,7 @@ local Tab2Section = Tab2:NewSection("Themes")
 
 Tab1Section:NewButton("Gold Farm", "Enables Gold Auto Farm", function()
     local Gold = true
+    Gold = true
     if Gold then
       Win()
     end
@@ -81,6 +82,7 @@ end)
 
 Tab1Section:NewButton("Gold Block Farm", "Enables Gold Block Auto Farm", function()
     local Block = true
+    Block = true
     if Block then
       Block()
     end
