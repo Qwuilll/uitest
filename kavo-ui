@@ -1,5 +1,6 @@
 local Library = loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
 local Window = Library.CreateLib("Build A Boat For Treasure  ", "Ocean")
+local Player = game:GetService('Players').LocalPlayer
 local time = 3
 function Tween(Time, Position)
 	game:GetService('Workspace').Gravity = 0
@@ -35,7 +36,6 @@ function Win()
   Tween(1, CFrame.new(-55, -360, 9504))
   wait(1)
   Tween(1, CFrame.new(-55, -360, 9491))
-  wait(20)
 end
 end
 function Block()
@@ -50,7 +50,6 @@ function Block()
 	Tween(1, CFrame.new(-55, -360, 9504))
 	wait(1)
 	Tween(1, CFrame.new(-55, -360, 9491))
-wait(20)
 end
 end
 
@@ -78,4 +77,27 @@ Tab1Section:NewButton("Gold Block Farm", "Enabled Gold Block Auto Farm", functio
     end
 end)
 
+--other stuff
+Player.OtherData.End.Changed:Connect(function()
+	if Gold == true then
+		if Player.OtherData.End.Value ~= 'EndReached' then
+			Win()
+		end
+	end
+end)
 
+Player.OtherData.End.Changed:Connect(function()
+	if Block == true then
+		if Player.OtherData.End.Value ~= 'EndReached' then
+			Block()
+		end
+	end
+end)
+
+Player.CharacterAdded:Connect(function()
+	if Gold == true or Block == true then
+		if Player:HasAppearanceLoaded() then
+			game:GetService('Workspace').ClaimRiverResultsGold:FireServer()
+		end
+	end
+end)
